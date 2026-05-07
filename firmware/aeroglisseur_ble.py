@@ -100,12 +100,12 @@ def update_state(new_state):
 # !! Les élèves modifient ces UUIDs pour différencier leur binôme !!
 # (modifier aussi les UUIDs dans le fichier HTML correspondant)
 
-SERVICE_UUID   = bluetooth.UUID("a2b3c4d5-0001-4abc-8def-123456789abc")
-THROTTLE_UUID  = bluetooth.UUID("a2b3c4d5-0002-4abc-8def-123456789abc")
-ARM_UUID       = bluetooth.UUID("a2b3c4d5-0003-4abc-8def-123456789abc")
-STATUS_UUID    = bluetooth.UUID("a2b3c4d5-0004-4abc-8def-123456789abc")
-SERVO_LR_UUID  = bluetooth.UUID("a2b3c4d5-0005-4abc-8def-123456789abc")
-SERVO_FB_UUID  = bluetooth.UUID("a2b3c4d5-0006-4abc-8def-123456789abc")
+SERVICE_UUID   = bluetooth.UUID("39d6010a-c1c0-4b2b-858c-4443278b8211")
+THROTTLE_UUID  = bluetooth.UUID("39d6010a-c1c1-4b2b-858c-4443278b8211")
+ARM_UUID       = bluetooth.UUID("39d6010a-c1c2-4b2b-858c-4443278b8211")
+STATUS_UUID    = bluetooth.UUID("39d6010a-c1c3-4b2b-858c-4443278b8211")
+SERVO_LR_UUID  = bluetooth.UUID("39d6010a-c1c4-4b2b-858c-4443278b8211")
+SERVO_FB_UUID  = bluetooth.UUID("39d6010a-c1c5-4b2b-858c-4443278b8211")
 
 # ── Initialisation GATT ───────────────────────────────────────────────────────
 ble = bluetooth.BLE()
@@ -128,7 +128,7 @@ ble.gap_advertise(None)
 
 def start_advertising():
     # !! Remplacer par votre prénom (ex: b"Alice") !!
-    name = b"Aeroglisseur"
+    name = b"LéoDG"
     adv  = b'\x02\x01\x06' + bytes([len(name) + 1, 0x09]) + name
     assert len(adv) <= 31
     ble.gap_advertise(100_000, adv)
